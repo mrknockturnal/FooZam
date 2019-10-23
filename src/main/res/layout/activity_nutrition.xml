@@ -6,4 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".NutritionActivity">
 
+    <ImageView
+        android:id="@+id/foozam_symbol"
+        android:layout_width="93dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/company_logo"
+        android:src="@drawable/symbol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/result_image"
+        android:layout_width="340dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/result_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foozam_symbol" />
+
+
+    <TextView
+        android:id="@+id/nutritional_info"
+        android:layout_width="340dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_image" />
+
+    <ImageView
+        android:id="@+id/recipe_button"
+        android:layout_width="340dp"
+        android:layout_height="123dp"
+        android:contentDescription="@string/recipe_label"
+        android:src="@drawable/nutrition_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nutritional_info" />
+
+    <Button
+        android:id="@+id/explore_button"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_explore_button"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:text="@string/title_explore"
+        android:textColor="@color/colorBackground"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/recipe_button"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="@+id/recipe_button"
+        app:layout_constraintTop_toBottomOf="@+id/nutritional_info" />
+
+    <Button
+        android:id="@+id/return_to_scan_button"
+        android:layout_width="235dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:text="@string/title_try_another"
+        android:textColor="@color/colorBackground"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nutritional_info" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        app:menu="@menu/bottom_navigation_menu"
+        tools:layout_editor_absoluteX="0dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

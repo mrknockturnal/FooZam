@@ -7,28 +7,54 @@
     tools:context=".ScanActivity">
 
     <ImageView
+        android:id="@+id/foozam_symbol"
+        android:layout_width="93dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/company_logo"
+        android:src="@drawable/symbol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="244dp"
         android:layout_height="244dp"
         android:layout_weight="9"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/btnCamera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/foozam_symbol" />
 
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="260dp"
         android:layout_height="77dp"
+        android:layout_marginTop="428dp"
         android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
         android:text="@string/title_scan_fruit"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/predict_button"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:visibility="invisible"
+        android:layout_marginTop="108dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/title_predict"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCamera" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

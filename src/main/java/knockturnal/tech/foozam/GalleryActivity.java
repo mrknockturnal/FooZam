@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -100,9 +101,8 @@ public class GalleryActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case PERMISSION_CODE:{
-                if (grantResults.length >= 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if (PERMISSION_CODE == requestCode){
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     //permission was granted
                     pickImageFromGallery();
                 }
@@ -112,14 +112,16 @@ public class GalleryActivity extends AppCompatActivity {
                 }
             }
         }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             //set the image on the imageView
-            myImageView.setImageURI(data.getData());
+
+            // This is where the image is stored
+            Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+            myImageView.setImageBitmap(bitmap);
         }
     }
 
